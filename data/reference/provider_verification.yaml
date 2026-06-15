@@ -1,0 +1,41 @@
+# Static checklist of sources flagged in Nova Toe review for manual verification.
+
+providers:
+  - id: ntd
+    name: FTA National Transit Database
+    verify: coverage_completeness_on_portal
+    notes: NTP data on the site need to verify the coverage
+
+  - id: fmcsa_dataqs
+    name: FMCSA DataQs
+    verify: in_system_check
+    notes: Check if DataQs workflows are represented on the portal
+
+  - id: fhwa_hsis
+    name: FHWA Highway Safety Information System
+    verify: in_system_check
+    access: agreement_required
+
+  - id: fhwa_hpms
+    name: FHWA Highway Performance Monitoring System
+    verify: open_geospatial_on_portal
+
+  - id: utc_program
+    name: DOT University Transportation Centers
+    verify: annual_contribution_request
+    notes: Annual report stopped 2019; participant list updated 2026
+
+  - id: icpsr_surveys
+    name: ICPSR Metropolitan Travel Behavior Surveys
+    verify: contact_provider_to_update
+    notes: Only 1999 snapshot on site
+
+  - id: ohio_tims
+    name: Ohio DOT TIMS
+    verify: link_only_recommendation
+    url: https://tims.dot.state.oh.us/tims/data
+
+  - id: transitland
+    name: Transitland Atlas
+    verify: commercial_link_only
+    notes: GTFS aggregation; paid feeds not national catalog rows

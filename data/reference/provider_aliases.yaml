@@ -1,0 +1,39 @@
+# Map organization / attribution strings to short provider labels for rollups.
+
+aliases:
+  - patterns: ["Bureau of Transportation Statistics", "BTS", "bts"]
+    provider: BTS
+  - patterns: ["Federal Highway Administration", "FHWA", "fhwa"]
+    provider: FHWA
+  - patterns: ["Federal Railroad Administration", "FRA", "fra"]
+    provider: FRA
+  - patterns: ["Federal Transit Administration", "FTA", "fta"]
+    provider: FTA
+  - patterns: ["Federal Aviation Administration", "FAA", "faa"]
+    provider: FAA
+  - patterns: ["National Highway Traffic Safety Administration", "NHTSA", "nhtsa"]
+    provider: NHTSA
+  - patterns: ["Federal Motor Carrier Safety Administration", "FMCSA", "fmcsa"]
+    provider: FMCSA
+  - patterns: ["Pipeline and Hazardous Materials", "PHMSA", "phmsa"]
+    provider: PHMSA
+  - patterns: ["Maritime Administration", "MARAD", "marad", "Maritime"]
+    provider: MARAD
+  - patterns: ["Department of Transportation", "U.S. Department of Transportation", "OST", "USDOT"]
+    provider: USDOT
+  - patterns: ["National Renewable Energy Laboratory", "NREL"]
+    provider: NREL
+  - patterns: ["United States Census Bureau", "USCB", "Census"]
+    provider: Census
+  - patterns: ["MobilityData"]
+    provider: MobilityData
+  - patterns: ["Transitland", "Interline"]
+    provider: Transitland
+  - patterns: ["RITIS", "UMD", "CATT"]
+    provider: RITIS
+  - patterns: ["VDOT", "Virginia"]
+    provider: VDOT
+  - patterns: ["Ohio", "ODOT"]
+    provider: ODOT
+  - patterns: ["UDOT", "Utah"]
+    provider: UDOT

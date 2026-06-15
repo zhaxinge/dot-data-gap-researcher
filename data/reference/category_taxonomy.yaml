@@ -1,0 +1,82 @@
+# Canonical portal categories — maps Socrata "and" variants to homepage "&" names.
+# See docs/category-research-protocol.md for interview-driven updates.
+
+canonical:
+  - id: administrative
+    name: Administrative
+    aliases:
+      - Administrative
+      - "Administrative - BIL"
+
+  - id: railroads
+    name: Railroads
+    aliases:
+      - Railroads
+      - Railroad
+
+  - id: roadways_bridges
+    name: Roadways & Bridges
+    aliases:
+      - Roadways & Bridges
+      - Roadways and Bridges
+      - "Roadways and Bridges"
+
+  - id: pipelines_hazmat
+    name: Pipelines & HAZMAT
+    aliases:
+      - Pipelines & HAZMAT
+      - Pipelines and Hazmat
+      - "Pipelines and Hazmat"
+
+  - id: trucking_motorcoaches
+    name: Trucking & Motorcoaches
+    aliases:
+      - Trucking & Motorcoaches
+      - Trucking and Motorcoaches
+      - "Trucking and Motorcoaches"
+
+  - id: aviation
+    name: Aviation
+    aliases:
+      - Aviation
+
+  - id: public_transit
+    name: Public Transit
+    aliases:
+      - Public Transit
+      - Transit
+
+  - id: automobiles
+    name: Automobiles
+    aliases:
+      - Automobiles
+
+  - id: maritime_waterways
+    name: Maritime & Waterways
+    aliases:
+      - Maritime & Waterways
+      - Maritime and Waterways
+      - "Maritime and Waterways"
+
+  - id: research_statistics
+    name: Research & Statistics
+    aliases:
+      - Research & Statistics
+      - Research and Statistics
+      - "Research and Statistics"
+
+  - id: bicycles_pedestrians
+    name: Bicycles & Pedestrians
+    aliases:
+      - Bicycles & Pedestrians
+      - Bicycles and Pedestrians
+      - "Bicycles and Pedestrians"
+
+  - id: cross_modal
+    name: Cross-Modal / Other
+    aliases:
+      - Cross-Modal / Other
+      - Cross-Modal
+      - Other
+
+default_category: Cross-Modal / Other

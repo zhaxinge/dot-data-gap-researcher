@@ -1,0 +1,401 @@
+# Supplemental transportation data sources for gap analysis.
+# Documentation: docs/reference-catalog.md
+#
+# registry_fetchers: fetched programmatically at runtime
+# portals / api_endpoints / clearinghouses / standards_registries: static entries
+
+registry_fetchers:
+  - id: mobilitydata_gbfs
+    name: MobilityData GBFS systems.csv
+    url: https://raw.githubusercontent.com/MobilityData/gbfs/master/systems.csv
+    bureau: MobilityData
+    modal: Bicycles & Pedestrians
+    format: csv
+    country_filter: US
+    title_field: Name
+    url_field: "Auto-Discovery URL"
+    id_field: "System ID"
+
+  - id: omf_mds_providers
+    name: Open Mobility Foundation MDS providers.csv
+    url: https://raw.githubusercontent.com/openmobilityfoundation/mobility-data-specification/main/providers.csv
+    bureau: OMF
+    modal: Bicycles & Pedestrians
+    format: csv
+    title_field: provider_name
+    url_field: mds_provider_url
+    id_field: provider_id
+
+  - id: wzdx_feed_registry
+    name: WZDx Feed Registry
+    url: https://data.transportation.gov/api/views/69qe-yiui/rows.csv?accessType=DOWNLOAD
+    bureau: FHWA
+    modal: Roadways & Bridges
+    format: csv
+    title_field: feedName
+    url_field: url
+    id_field: feedName
+    notes: Individual jurisdiction work-zone feeds; metadata on DOT portal but feeds are external APIs
+
+  - id: transitland_atlas_us
+    name: Transitland Atlas (US GTFS/GBFS feeds)
+    github_repo: transitland/transitland-atlas
+    github_path: feeds
+    exclude_patterns:
+      - ".com.au."
+      - ".co.uk."
+      - ".ca."
+      - ".de."
+      - ".it."
+      - ".fr."
+      - ".es."
+      - ".ch."
+      - ".at."
+      - ".be."
+      - ".nl."
+      - ".se."
+      - ".no."
+      - ".dk."
+      - ".fi."
+      - ".pl."
+      - ".br."
+      - ".mx."
+      - ".nz."
+      - ".jp."
+      - ".kr."
+      - ".in."
+      - ".sg."
+      - ".hk."
+      - ".tw."
+      - ".ph."
+      - ".id."
+      - ".my."
+      - ".th."
+      - ".vn."
+      - ".ae."
+      - ".il."
+      - ".za."
+      - ".ru."
+    bureau: Transitland
+    modal: Public Transit
+    format: dmfr_json
+    max_files: 40
+
+socrata_discovery_queries:
+  - "Department of Transportation"
+  - "Federal Aviation Administration"
+  - "Federal Highway Administration"
+  - "Federal Railroad Administration"
+  - "Federal Transit Administration"
+  - "National Highway Traffic Safety Administration"
+  - "Federal Motor Carrier Safety Administration"
+  - "Pipeline and Hazardous Materials"
+  - "Bureau of Transportation Statistics"
+  - "Maritime Administration"
+  - "National Transportation Atlas"
+  - "grade crossing railroad"
+  - "national transit database"
+  - "automated traffic signal performance"
+  - "probe vehicle speed"
+  - "micromobility GBFS"
+
+arcgis_hubs:
+  - id: usdot_ntad
+    name: USDOT Open Data (ArcGIS Hub)
+    base_url: https://data-usdot.opendata.arcgis.com
+    catalog_api: https://data-usdot.opendata.arcgis.com/api/v3/datasets
+    bureau: BTS
+    modal: Research & Statistics
+
+  - id: bts_geodata
+    name: BTS Geospatial Data Catalog
+    base_url: https://geodata.bts.gov
+    catalog_api: https://geodata.bts.gov/api/v3/datasets
+    bureau: BTS
+    modal: Research & Statistics
+
+portals:
+  - id: dot_developer
+    name: DOT Developer Resources
+    url: https://www.transportation.gov/developer
+    bureau: OST
+    modal: Cross-Modal
+
+  - id: dot_open_gov_inventory
+    name: DOT Open Government Data Inventory
+    url: https://www.transportation.gov/open-government-data-inventory
+    bureau: OST
+    modal: Cross-Modal
+
+  - id: ritis_npmrds
+    name: RITIS / NPMRDS Analytics Platform
+    url: https://npmrds.ritis.org/
+    docs_url: https://ritis.org/access
+    bureau: FHWA
+    modal: Roadways & Bridges
+    access: agreement_required
+    notes: FHWA probe-speed archive; not open download on data.transportation.gov
+
+  - id: ritis_platform
+    name: Regional Integrated Transportation Information System (RITIS)
+    url: https://ritis.org/
+    bureau: UMD/CATT
+    modal: Cross-Modal
+    access: sponsorship_required
+    notes: Pooled-fund clearinghouse for incidents, weather, probe data, signals
+
+  - id: virginia_rm3p_dep
+    name: Virginia RM3P Data-Exchange Platform
+    url: https://rm3p.ritis.org/
+    bureau: VDOT
+    modal: Cross-Modal
+    access: permissioned
+    notes: Regional multi-agency API hub
+
+  - id: faa_data_portal
+    name: FAA Data Portal
+    url: https://www.faa.gov/data
+    bureau: FAA
+    modal: Aviation
+
+  - id: fra_dataportal
+    name: FRA Data Portal
+    url: https://dataportal.fra.dot.gov
+    api_url: https://dataportal.fra.dot.gov/home/APIs
+    bureau: FRA
+    modal: Railroads
+
+  - id: fra_safety_odata
+    name: FRA Office of Safety OData API
+    url: https://safetydata.fra.dot.gov/MasterWebService/PublicApi/Develop/QuickStartGuide
+    bureau: FRA
+    modal: Railroads
+    access: registration_required
+
+  - id: nhtsa_datasets
+    name: NHTSA Datasets and APIs
+    url: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+    bureau: NHTSA
+    modal: Automobiles
+
+  - id: fmcsa_datasets
+    name: FMCSA Datasets and APIs
+    url: https://www.fmcsa.dot.gov/registration/datasets-and-apis
+    bureau: FMCSA
+    modal: Trucking & Motorcoaches
+
+  - id: fhwa_policy_data
+    name: FHWA Policy Information and Statistics
+    url: https://www.fhwa.dot.gov/policyinformation/
+    bureau: FHWA
+    modal: Roadways & Bridges
+
+  - id: fhwa_mire
+    name: FHWA MIRE Roadway Inventory Standard
+    url: https://highways.dot.gov/safety/data-analysis-tools/mire-fde/model-inventory-roadway-elements-mire-21
+    bureau: FHWA
+    modal: Roadways & Bridges
+    notes: Standard only; inventories live in state DOT GIS systems
+
+  - id: fhwa_npmrds_program
+    name: FHWA NPMRDS Program Documentation
+    url: https://ops.fhwa.dot.gov/publications/fhwahop20028/index.htm
+    bureau: FHWA
+    modal: Roadways & Bridges
+
+  - id: fhwa_wzdx
+    name: FHWA Work Zone Data Exchange (WZDx)
+    url: https://ops.fhwa.dot.gov/WZ/wzdx/index.htm
+    bureau: FHWA
+    modal: Roadways & Bridges
+
+  - id: fta_ntd
+    name: FTA National Transit Database
+    url: https://www.transit.dot.gov/ntd
+    bureau: FTA
+    modal: Public Transit
+
+  - id: phmsa_data
+    name: PHMSA Data and Statistics
+    url: https://www.phmsa.dot.gov/data-and-statistics
+    bureau: PHMSA
+    modal: Pipelines & HAZMAT
+
+  - id: marad_data
+    name: MARAD Data and Reports
+    url: https://www.maritime.dot.gov/data-reports
+    bureau: MARAD
+    modal: Maritime & Waterways
+
+  - id: bts_ntad
+    name: National Transportation Atlas Database (NTAD)
+    url: https://www.bts.gov/ntad
+    archive_url: https://rosap.ntl.bts.gov/collection_ntad
+    bureau: BTS
+    modal: Research & Statistics
+
+  - id: ntl_rosap
+    name: National Transportation Library (ROSA P)
+    url: https://rosap.ntl.bts.gov
+    bureau: BTS
+    modal: Research & Statistics
+
+  - id: dot_utc_program
+    name: DOT University Transportation Centers
+    url: https://www.transportation.gov/content/university-transportation-centers
+    bureau: OST
+    modal: Research & Statistics
+
+  - id: icpsr_mtbs
+    name: ICPSR Metropolitan Travel Behavior Survey Series
+    url: https://www.icpsr.umich.edu/web/ICPSR/series/263
+    bureau: BTS/FHWA
+    modal: Research & Statistics
+
+  - id: mtsa_surveyarchive
+    name: Metropolitan Travel Survey Archive
+    url: http://www.surveyarchive.org/index.html
+    bureau: BTS
+    modal: Research & Statistics
+
+  - id: ohio_tims
+    name: Ohio DOT Transportation Information Mapping System (TIMS)
+    url: https://www.transportation.ohio.gov/programs/data-governance/tims/tims
+    catalog_url: https://tims.dot.state.oh.us/tims
+    bureau: ODOT
+    modal: Roadways & Bridges
+
+  - id: oregon_dot_ritis
+    name: Oregon DOT RITIS Integration
+    url: https://www.oregon.gov/odot/data/pages/ritis.aspx
+    bureau: ODOT
+    modal: Cross-Modal
+
+  - id: udot_atspm
+    name: UDOT Automated Traffic Signal Performance Measures (ATSPM)
+    url: https://udottraffic.utah.gov/ATSPM/Home/About
+    github_url: https://github.com/OpenSourceTransportation/Atspm
+    bureau: UDOT
+    modal: Roadways & Bridges
+    notes: Open-source ATSPM; controller data stored per agency
+
+clearinghouses:
+  - id: transitland
+    name: Transitland Platform
+    url: https://transit.land
+    catalog_url: https://github.com/transitland/transitland-atlas
+    bureau: Interline
+    modal: Public Transit
+
+  - id: mobilitydata
+    name: MobilityData
+    url: https://mobilitydata.org
+    catalog_url: https://github.com/MobilityData/gbfs/blob/master/systems.csv
+    bureau: MobilityData
+    modal: Bicycles & Pedestrians
+
+  - id: open_mobility_foundation
+    name: Open Mobility Foundation
+    url: https://openmobilityfoundation.org
+    catalog_url: https://github.com/openmobilityfoundation/mobility-data-specification
+    bureau: OMF
+    modal: Bicycles & Pedestrians
+
+  - id: dmfr_spec
+    name: Distributed Mobility Feed Registry (DMFR)
+    url: https://github.com/transitland/distributed-mobility-feed-registry
+    bureau: Transitland
+    modal: Cross-Modal
+
+  - id: sharedstreets
+    name: SharedStreets Referencing System
+    url: https://sharedstreets.io/toolkit/
+    github_url: https://github.com/sharedstreets/sharedstreets-ref-system
+    bureau: SharedStreets
+    modal: Cross-Modal
+
+  - id: gmns_spec
+    name: General Modeling Network Specification (GMNS)
+    url: https://zephyr-data-specs.github.io/GMNS/
+    github_url: https://github.com/zephyr-data-specs/GMNS
+    bureau: Zephyr
+    modal: Research & Statistics
+
+standards_registries:
+  - id: inrix_commercial
+    name: INRIX Commercial Traffic Data
+    url: https://inrix.com/
+    bureau: INRIX
+    modal: Roadways & Bridges
+    access: commercial_license
+    notes: NPMRDS supplier; also sells real-time probe products beyond federal archive
+
+  - id: tomtom_traffic
+    name: TomTom Traffic / MOVE
+    url: https://www.tomtom.com/products/traffic/
+    bureau: TomTom
+    modal: Roadways & Bridges
+    access: commercial_license
+
+  - id: here_probe
+    name: HERE Probe Data / Traffic
+    url: https://www.here.com/platform/probe-data
+    bureau: HERE
+    modal: Roadways & Bridges
+    access: commercial_license
+
+api_endpoints:
+  - id: nhtsa_vpic
+    title: NHTSA vPIC Vehicle API
+    url: https://vpic.nhtsa.dot.gov/api/
+    docs_url: https://vpic.nhtsa.dot.gov/api/Home/Index/LanguageExamples
+    bureau: NHTSA
+    modal: Automobiles
+    access: public
+
+  - id: nhtsa_recalls_api
+    title: NHTSA Recalls API
+    url: https://api.nhtsa.gov/recalls/recallByVehicle
+    docs_url: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+    bureau: NHTSA
+    modal: Automobiles
+    access: public
+
+  - id: fmcsa_qcmobile
+    title: FMCSA QCMobile API
+    url: https://mobile.fmcsa.dot.gov/qc/services/
+    docs_url: https://mobile.fmcsa.dot.gov/QCDevsite/docs/qcApi
+    bureau: FMCSA
+    modal: Trucking & Motorcoaches
+    access: api_key_required
+
+  - id: fra_gcis_odata
+    title: FRA Grade Crossing Inventory System (GCIS) OData
+    url: https://safetydata.fra.dot.gov/MasterWebService/PublicApi/GCIS/v1/odata/
+    docs_url: https://safetydata.fra.dot.gov/MasterWebService/PublicApi/Develop/QuickStartGuide
+    bureau: FRA
+    modal: Railroads
+    access: registration_required
+
+  - id: socrata_dev_docs
+    title: Socrata Open Data API (DOT portal)
+    url: https://dev.socrata.com/
+    docs_url: https://dev.socrata.com/foundry/data.transportation.gov
+    bureau: OST
+    modal: Cross-Modal
+    access: public
+
+  - id: socrata_discovery_api
+    title: Socrata Discovery API (cross-portal catalog)
+    url: https://api.us.socrata.com/api/catalog/v1
+    docs_url: https://dev.socrata.com/
+    bureau: Socrata
+    modal: Cross-Modal
+    access: public
+
+  - id: dot_views_json
+    title: DOT Portal Native Catalog (views.json)
+    url: https://data.transportation.gov/api/views.json
+    bureau: OST
+    modal: Cross-Modal
+    access: public

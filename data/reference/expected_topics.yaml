@@ -1,0 +1,51 @@
+# Portal categories visible on https://data.transportation.gov homepage
+categories:
+  - id: railroads
+    name: Railroads
+    keywords: [railroad, rail, fra, amtrak, freight rail]
+  - id: roadways_bridges
+    name: Roadways & Bridges
+    keywords: [highway, bridge, fhwa, road, pavement, traffic]
+  - id: pipelines_hazmat
+    name: Pipelines & HAZMAT
+    keywords: [pipeline, hazmat, phmsa, hazardous]
+  - id: trucking_motorcoaches
+    name: Trucking & Motorcoaches
+    keywords: [trucking, motorcoach, fmcsa, bus, commercial vehicle]
+  - id: aviation
+    name: Aviation
+    keywords: [aviation, faa, airport, airline, flight]
+  - id: public_transit
+    name: Public Transit
+    keywords: [transit, fta, bus, rail transit, commuter]
+  - id: automobiles
+    name: Automobiles
+    keywords: [automobile, vehicle, nhtsa, recall, crash, safety]
+  - id: maritime_waterways
+    name: Maritime & Waterways
+    keywords: [maritime, waterway, port, vessel, marad]
+  - id: research_statistics
+    name: Research & Statistics
+    keywords: [research, statistics, bts, survey, ntdds]
+  - id: bicycles_pedestrians
+    name: Bicycles & Pedestrians
+    keywords: [bicycle, pedestrian, bike, walk, active transport]
+  - id: cross_modal
+    name: Cross-Modal / Other
+    keywords: [border crossing, work zone, bsm, connected vehicle, dot]
+
+# Known dataset types expected in a comprehensive DOT open data portal
+expected_dataset_types:
+  - crash and safety statistics
+  - infrastructure condition and inventory
+  - traffic volumes and congestion
+  - transit ridership and performance
+  - freight and commodity flows
+  - licensing and registration
+  - inspections and compliance
+  - environmental and emissions
+  - project and construction data
+  - geospatial / GIS layers
+
+# Quality thresholds
+stale_threshold_days: 730  # 2 years

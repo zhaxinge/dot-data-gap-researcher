@@ -1,0 +1,88 @@
+# Modal and sub-agency open data portals for cross-portal discovery
+agencies:
+  - id: dot_portal
+    name: DOT Open Data Portal
+    url: https://data.transportation.gov
+    catalog_url: https://data.transportation.gov/data.json
+    views_catalog_url: https://data.transportation.gov/api/views.json
+    socrata_docs: https://dev.socrata.com/foundry/data.transportation.gov
+    bureau: OST
+
+  - id: dot_developer
+    name: DOT Developer Resources
+    url: https://www.transportation.gov/developer
+    bureau: OST
+
+  - id: data_gov_dot
+    name: data.gov DOT Organization
+    url: https://catalog.data.gov/organization/dot-gov
+    catalog_api: https://api.gsa.gov/technology/datagov/v4/search?org_slug=dot
+    bureau: OST
+
+  - id: faa
+    name: Federal Aviation Administration
+    url: https://www.faa.gov/data
+    keywords: [aviation, airport, air traffic, aircraft, SWIM, aeronautical]
+    bureau: FAA
+
+  - id: fhwa
+    name: Federal Highway Administration
+    url: https://www.fhwa.dot.gov/policyinformation/
+    keywords: [highway, traffic, bridge, pavement, NPMRDS]
+    bureau: FHWA
+
+  - id: fra
+    name: Federal Railroad Administration
+    url: https://railroads.dot.gov/
+    dataportal_url: https://dataportal.fra.dot.gov
+    safety_api_url: https://safetydata.fra.dot.gov/MasterWebService/PublicApi/Develop/QuickStartGuide
+    keywords: [railroad, rail safety, grade crossing, GCIS]
+    bureau: FRA
+
+  - id: fta
+    name: Federal Transit Administration
+    url: https://www.transit.dot.gov/ntd
+    keywords: [transit, national transit database, ridership, NTD]
+    bureau: FTA
+
+  - id: nhtsa
+    name: National Highway Traffic Safety Administration
+    url: https://www.nhtsa.gov/nhtsa-datasets-and-apis
+    api_url: https://vpic.nhtsa.dot.gov/api/
+    keywords: [crash, recall, vehicle safety, fatalities, FARS, vPIC]
+    bureau: NHTSA
+
+  - id: fmcsa
+    name: Federal Motor Carrier Safety Administration
+    url: https://www.fmcsa.dot.gov/registration/datasets-and-apis
+    api_url: https://mobile.fmcsa.dot.gov/qc/services/
+    keywords: [trucking, motor carrier, safety, compliance, QCMobile]
+    bureau: FMCSA
+
+  - id: phmsa
+    name: Pipeline and Hazardous Materials Safety Administration
+    url: https://www.phmsa.dot.gov/data-and-statistics
+    keywords: [pipeline, hazmat, incident]
+    bureau: PHMSA
+
+  - id: marad
+    name: Maritime Administration
+    url: https://www.maritime.dot.gov/data-reports
+    keywords: [maritime, port, vessel, fleet]
+    bureau: MARAD
+
+  - id: bts
+    name: Bureau of Transportation Statistics
+    url: https://www.bts.gov/browse-statistical-products-and-data
+    ntad_url: https://www.bts.gov/ntad
+    geodata_url: https://geodata.bts.gov
+    arcgis_hub_url: https://data-usdot.opendata.arcgis.com
+    keywords: [statistics, freight, passenger, transportation indicators, NTAD]
+    bureau: BTS
+
+  - id: ntl
+    name: National Transportation Library (ROSA P)
+    url: https://rosap.ntl.bts.gov
+    keywords: [research, reports, datasets]
+    bureau: BTS
+
