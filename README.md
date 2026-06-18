@@ -91,14 +91,6 @@ cd backend
 uvicorn server:app --host 127.0.0.1 --port 8000
 ```
 
-**Frontend:**
-
-```powershell
-npm install
-npm run dev
-```
-
-Open http://localhost:5173
 
 ## Pipeline
 
