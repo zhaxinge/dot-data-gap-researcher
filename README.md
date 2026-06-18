@@ -29,18 +29,17 @@ flowchart LR
 ### 1. Install
 
 ```powershell
-cd backend
 python -m venv .venv
 .venv\Scripts\activate          # Windows
 # source .venv/bin/activate     # macOS/Linux
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 Copy environment variables:
 
 ```powershell
-cp ..\.env.example .env
-# Edit .env — set DATAGOV_API_KEY for full catalog.data.gov coverage
+cp .env.example backend/.env
+# Edit backend/.env — set DATAGOV_API_KEY for full catalog.data.gov coverage
 ```
 
 ### 2. CLI — Smoke test (full pipeline, no LLM)
@@ -48,15 +47,13 @@ cp ..\.env.example .env
 Runs the full 4-step pipeline without API keys:
 
 ```powershell
-cd backend
-.venv\Scripts\activate
-python ..\cli\smoke_test_tools.py
+python cli/smoke_test_tools.py
 
 # With popularity rankings (slower — fetches per-dataset view/download counts)
-python ..\cli\smoke_test_tools.py --with-popularity --popularity-limit 200
+python cli/smoke_test_tools.py --with-popularity --popularity-limit 200
 
 # Optional link health checks on top true gaps
-python ..\cli\smoke_test_tools.py --check-links
+python cli/smoke_test_tools.py --check-links
 ```
 
 Outputs:
