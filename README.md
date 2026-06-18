@@ -4,7 +4,6 @@
 
 The CLI pipeline catalogs the DOT Socrata portal, compares it against federal and third-party reference sources, and produces **evidence-backed** gap reports with `priority_score`, `gap_class`, and `recommended_action` on every row.
 
-**Interview demo (2 min):** [docs/INTERVIEW_DEMO.md](docs/INTERVIEW_DEMO.md)  
 **Full reference-catalog documentation:** [docs/reference-catalog.md](docs/reference-catalog.md)
 
 ## Quick Start
