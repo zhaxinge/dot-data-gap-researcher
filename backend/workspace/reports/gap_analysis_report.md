@@ -6,9 +6,9 @@
 
 ## Executive Summary
 
-- DOT portal datasets: **None**
-- Reference datasets: **None**
-- Total gaps/issues flagged: **3323**
+- DOT portal datasets: **1,676**
+- Reference datasets: **3,068**
+- Total gaps/issues flagged: **3,201**
 - Category assignments (one per dataset): **None**
 
 ### Missing-on-Portal Breakdown
@@ -22,6 +22,13 @@
 - **no_api_endpoint**: 83
 - **redirect_only**: 37
 - **stale_metadata**: 572
+
+### Gaps by Issue Type
+
+- **Missing on DOT portal**: 2,509 datasets present on data.gov but absent from data.transportation.gov
+- **Stale metadata**: 572 datasets with outdated or incomplete documentation
+- **No API endpoint**: 83 datasets with no machine-readable access
+- **Redirect only**: 37 datasets linking out without hosted data
 
 ## Issues by Provider
 
@@ -326,6 +333,18 @@
 
 ## Coverage by Portal Category
 
+The most underrepresented categories relative to data.gov are **Roadways & Bridges** (504 total entries across two naming conventions), **Automobiles** (443), and **Maritime** (384). **Transit** and **Bicycles & Pedestrians** show significant fragmentation due to duplicate category naming.
+
+## High-Priority Missing Sources (ITS / Traffic Relevant)
+
+Several high-value transportation data sources are absent from the DOT portal entirely, including:
+
+- **RITIS / NPMRDS Analytics Platform** (FHWA/UMD) — widely used for congestion and performance monitoring
+- **Virginia RM3P Data-Exchange Platform** (VDOT) — directly relevant to our contract work
+- **UDOT Automated Traffic Signal Performance Measures (ATSPM)** — key signal operations reference
+- **FHWA Work Zone Data Exchange (WZDx)** — increasingly required for connected vehicle applications
+- **FHWA NPMRDS Program Documentation** — core performance management resource
+- **FRA, NHTSA, FMCSA, and PHMSA data portals** — modal agency datasets largely absent
 
 ## True Gaps — Missing on data.transportation.gov
 
@@ -455,11 +474,12 @@ _Partner portals and registries — recommend link_only, not full portal mirror.
 
 ## Recommended Additions
 
-1. Mirror high-priority **true_gap** rows from gaps.csv (sort by priority_score).
-2. Use **link_only** for intentionally external and third_party_redirect assets.
-3. Refresh **stale_metadata** datasets older than 2 years.
-4. Add API endpoints for **no_api_endpoint** portal rows.
-5. Every gap includes **evidence** and **recommended_action** for audit trail.
+1. Mirror high-priority **true_gap** rows from gaps.csv (sort by priority_score), prioritizing **RITIS/NPMRDS**, **ATSPM**, and **WZDx**.
+2. Add Socrata **API endpoints** for datasets currently distributed as redirect-only links.
+3. Refresh metadata for the **572 datasets** flagged as stale (last updated 2+ years ago).
+4. Standardize **category naming conventions** to eliminate duplicate entries (e.g., "Roadways & Bridges" vs. "Roadways and Bridges").
+5. Use **link_only** for intentionally external and third_party_redirect assets.
+6. Every gap includes **evidence** and **recommended_action** for audit trail.
 
 ## Sources
 
