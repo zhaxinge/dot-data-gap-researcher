@@ -32,18 +32,7 @@ cp ..\.env.example .env
 # Edit .env — set DATAGOV_API_KEY for full catalog.data.gov coverage
 ```
 
-### 2. CLI — Interview demo (recommended for screen-share)
-
-```powershell
-cd backend
-.venv\Scripts\activate
-python ..\cli\interview_demo.py
-
-# Rehearsal with cached snapshots (portal 503 OK)
-python ..\cli\interview_demo.py --cached
-```
-
-### 3. CLI — Smoke test (full pipeline, no LLM)
+### 2. CLI — Smoke test (full pipeline, no LLM)
 
 Runs the full 4-step pipeline without API keys:
 
@@ -71,7 +60,7 @@ Outputs:
 | `backend/workspace/data/popularity_rankings.json` | Top datasets per category (with `--with-popularity`) |
 | `backend/workspace/reports/popular_datasets_by_category.md` | Popularity report (with `--with-popularity`) |
 
-### 4. CLI — LLM agent (optional)
+### 3. CLI — LLM agent (optional)
 
 Requires `deepagents` and `NVIDIA_API_KEY`:
 
@@ -80,15 +69,6 @@ python cli/run_gap_analysis.py
 ```
 
 If `deepagents` fails to install, use `interview_demo.py` or `smoke_test_tools.py` — they cover the same deterministic catalog and gap logic.
-
-### 5. Interactive UI (optional workshop UI)
-
-**Backend:**
-
-```powershell
-cd backend
-uvicorn server:app --host 127.0.0.1 --port 8000
-```
 
 
 ## Pipeline
