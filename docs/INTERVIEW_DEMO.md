@@ -1,4 +1,4 @@
-# DAT Interview Demo — Jerry Sun (Jun 17)
+# Demo
 
 **One-liner:** QC validated operational network data in production; this repo shows the same pattern on transportation open data — Python trust layer first, LLM for synthesis second.
 
