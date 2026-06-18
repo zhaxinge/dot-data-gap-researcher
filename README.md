@@ -7,6 +7,15 @@ The CLI pipeline catalogs the DOT Socrata portal, compares it against federal an
 **Full reference-catalog documentation:** [docs/reference-catalog.md](docs/reference-catalog.md)
 **Gap Analysis Report Example** [backend/workspace/reports/gap_analysis_report.md](backend/workspace/reports/gap_analysis_report.md)
 
+## Pipeline at a Glance
+
+```mermaid
+flowchart LR
+    A["1. fetch_dot_catalog<br/>data.json + views.json<br/>(DOT portal)"] --> C["3. analyze_catalog_gaps<br/>deterministic diff<br/>→ gaps.json"]
+    B["2. search_data_gov<br/>reference catalog<br/>(federal + external sources)"] --> C
+    C --> D["4. export_gap_report<br/>gap_analysis_report.md<br/>+ gaps.csv"]
+```
+
 ## Quick Start
 
 ### Prerequisites
